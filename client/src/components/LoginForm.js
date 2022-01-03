@@ -18,7 +18,7 @@ const LoginForm = () => {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     // check if form has everything (as per react-bootstrap docs)
@@ -29,7 +29,7 @@ const LoginForm = () => {
     }
 
     try {
-      const response = await useMutation(LOGIN_USER);
+      const response = useMutation(LOGIN_USER);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
